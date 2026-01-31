@@ -32,52 +32,51 @@ export default function Home() {
     <div className="space-y-8 pb-10">
 
       {/* Hero Section */}
-      <section className="w-full bg-gray-100">
-        <div className="container mx-auto px-0 md:px-4 py-4">
+      <section className="w-full bg-white">
+        <div className="container mx-auto px-0 md:px-4 py-6">
           <Carousel className="w-full">
             <CarouselContent>
               <CarouselItem>
-                <div className="relative w-full aspect-[21/9] md:aspect-[3/1] bg-gradient-to-r from-red-600 to-red-500 rounded-none md:rounded-lg flex items-center justify-center overflow-hidden">
-                  <div className="text-center p-6 z-10">
-                    <h2 className="text-3xl md:text-5xl font-black mb-2 text-white uppercase tracking-tighter">Renting de Impresoras</h2>
-                    <p className="text-xl md:text-2xl font-bold mb-4 text-white/90">Optimiza costos con nuestro servicio MPS</p>
-                    <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 font-bold px-8">Solicitar Cotización</Button>
+                <div className="relative w-full aspect-[21/9] md:aspect-[3/1] bg-gradient-to-r from-red-600 to-red-500 rounded-none md:rounded-xl flex items-center justify-center overflow-hidden shadow-sm">
+                  <div className="text-center p-6 z-10 text-white">
+                    <h2 className="text-3xl md:text-5xl font-black mb-2 uppercase tracking-tighter drop-shadow-sm">Renting de Impresoras</h2>
+                    <p className="text-xl md:text-2xl font-medium mb-6 opacity-95">Optimiza costos con nuestro servicio MPS</p>
+                    <Button size="lg" className="bg-white text-red-600 hover:bg-red-50 border-0 font-bold px-8 shadow-lg">Solicitar Cotización</Button>
                   </div>
                   {/* Decorative circles */}
-                  <div className="absolute -top-10 -right-10 w-64 h-64 bg-red-400 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
-                  <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-red-800 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                  <div className="absolute -top-10 -right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+                  <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-black/10 rounded-full blur-3xl"></div>
                 </div>
               </CarouselItem>
               <CarouselItem>
-                <div className="relative w-full aspect-[21/9] md:aspect-[3/1] bg-black text-white rounded-none md:rounded-lg flex items-center justify-center overflow-hidden">
+                <div className="relative w-full aspect-[21/9] md:aspect-[3/1] bg-gray-50 text-gray-900 rounded-none md:rounded-xl flex items-center justify-center overflow-hidden border border-gray-100">
                   <div className="text-center p-6 z-10">
                     <h2 className="text-3xl md:text-5xl font-black mb-2 uppercase tracking-tighter text-primary">Alta Producción</h2>
-                    <p className="text-xl md:text-2xl font-bold mb-4">Equipos Xerox y Konica para artes gráficas</p>
-                    <Button size="lg" className="bg-primary text-white hover:bg-primary/90 font-bold px-8">Ver Equipos</Button>
+                    <p className="text-xl md:text-2xl font-medium mb-6 text-gray-600">Equipos Xerox y Konica para artes gráficas</p>
+                    <Button size="lg" className="bg-primary text-white hover:bg-red-700 font-bold px-8 shadow-md">Ver Catálogo</Button>
                   </div>
                 </div>
               </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
+            <CarouselPrevious className="left-4 bg-white/80 hover:bg-white text-gray-900 border-none" />
+            <CarouselNext className="right-4 bg-white/80 hover:bg-white text-gray-900 border-none" />
           </Carousel>
         </div>
       </section>
 
-      {/* Categories Grid */}
+      {/* Categories Grid - Cleaner */}
       <section className="container mx-auto px-4">
-        <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-          <span className="w-2 h-8 bg-primary rounded-sm"></span>
-          Categorías Destacadas
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-900 tracking-tight">
+          Soluciones Corporativas
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
           {CATEGORIES.map((cat, i) => (
-            <Card key={i} className="hover:border-primary cursor-pointer transition-all hover:shadow-md group">
-              <CardContent className="flex flex-col items-center justify-center p-6 gap-2">
-                <div className="text-gray-400 group-hover:text-primary transition-colors">
+            <Card key={i} className="hover:border-primary/50 cursor-pointer transition-all hover:shadow-lg group border-gray-100 bg-white/50 hover:bg-white">
+              <CardContent className="flex flex-col items-center justify-center p-6 gap-3">
+                <div className="text-primary group-hover:scale-110 transition-transform duration-300">
                   {cat.icon}
                 </div>
-                <span className="font-bold text-sm">{cat.name}</span>
+                <span className="font-semibold text-sm text-gray-700 group-hover:text-primary transition-colors">{cat.name}</span>
               </CardContent>
             </Card>
           ))}
@@ -86,17 +85,17 @@ export default function Home() {
 
       {/* Solo Por Hoy - Products */}
       <section className="container mx-auto px-4">
-        <div className="flex justify-between items-end mb-4">
-          <h2 className="text-2xl font-bold flex items-center gap-2">
-            <span className="w-2 h-8 bg-destructive rounded-sm"></span>
-            ¡Solo por Hoy!
+        <div className="flex justify-between items-end mb-6 border-b border-gray-100 pb-2">
+          <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-900">
+            <span className="text-primary">🔥</span>
+            Equipos Destacados
           </h2>
-          <Link href="/offers" className="text-primary-foreground font-semibold hover:underline flex items-center text-sm">
+          <Link href="/offers" className="text-primary font-semibold hover:underline flex items-center text-sm">
             Ver todo <ChevronRight size={16} />
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
           {PRODUCTS.map((prod, i) => (
             <ProductCard
               key={i}
@@ -111,15 +110,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Banner Slim */}
+      {/* Banner Slim - Light Theme Fix */}
       <section className="container mx-auto px-4">
-        <div className="w-full h-32 bg-secondary rounded-lg flex items-center justify-between px-8 text-white relative overflow-hidden">
+        <div className="w-full h-32 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-between px-8 relative overflow-hidden shadow-sm">
           <div className="z-10">
-            <h3 className="text-2xl font-bold text-primary">Envío Gratis</h3>
-            <p>En miles de productos seleccionados</p>
+            <h3 className="text-2xl font-bold text-gray-900">Envío Gratis a Lima Metropolitana</h3>
+            <p className="text-gray-500">En equipos seleccionados y suministros por mayor volumen.</p>
           </div>
-          <Button variant="outline" className="z-10 text-black border-white hover:bg-white/90">Conocer más</Button>
-          <div className="absolute right-0 top-0 w-64 h-full bg-gray-800 skew-x-12 transform translate-x-10"></div>
+          <Button className="z-10 bg-gray-900 text-white hover:bg-black px-8">Ver Condiciones</Button>
+          <div className="absolute right-0 top-0 w-64 h-full bg-red-500/5 skew-x-12 transform translate-x-10"></div>
         </div>
       </section>
     </div>
